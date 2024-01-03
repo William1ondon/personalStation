@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
-import { useRouter, useRoute } from 'vue-router';
+import { RouterView } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
-function onClickBtn(btn_event) {
+function onClickBtn(btn_event: Event) {
   switch (btn_event.target.id) {
     case 'btn_w':
       router.push({ path: '/william' });
@@ -78,7 +78,7 @@ function onClickBtn(btn_event) {
       </div>
     </div>
 
-    <router-view v-slot="{ Component, route }">
+    <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component v-bind:is="Component" />
       </transition>
