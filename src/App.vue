@@ -5,7 +5,8 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 function onClickBtn(btn_event: Event) {
-  switch (btn_event.target.id) {
+  const target = (btn_event.target as HTMLElement);
+  switch (target.id) {
     case 'btn_w':
       router.push({ path: '/william' });
       break;
