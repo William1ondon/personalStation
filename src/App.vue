@@ -254,7 +254,7 @@ function onClickBtn(btn_event) {
   content: '';
   height: 60px;
   position: absolute;
-  border-left: 12px solid yellow;
+  border-left: 12px solid orange;
   transform: rotate(-45deg);
 }
 
