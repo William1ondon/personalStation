@@ -3,6 +3,7 @@ import './style.css';
 import './my_animate.css';
 import App from './App.vue';
 import router from './router/index';
+import store from './store/store';
 import 'animate.css';
 
 // 滚动动画 AOS
@@ -17,4 +18,5 @@ AOS.init({
 
 const app = createApp(App);
 app.use(router);
+app.use(store);
 app.mount('#app');
