@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
 import { useRouter } from 'vue-router';
+import store from './store/store';
 
 const router = useRouter();
 
@@ -43,7 +44,7 @@ function onClickBtn(btn_event: Event) {
       <button id="btn_d" class="btn" @click="onClickBtn">DreamWall</button>
     </div>
 
-    <div class="loader">
+    <div class="loader" v-if="store.state.isLoading">
       <div class="container">
         <div class="carousel">
           <div class="love"></div>

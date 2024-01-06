@@ -4,6 +4,7 @@ import WilliamPage from '../views/WilliamPage.vue';
 import JenniferPage from '../views/JenniferPage.vue';
 import DreamWall from '../views/DreamWall.vue';
 import PhotoWall from '../views/WilliamPage.vue';
+import store from '../store/store';
 
 const router = createRouter(
     {
@@ -39,18 +40,20 @@ const router = createRouter(
     }
 );
 
-/**
- * ## 全局后置钩子
- * ·发生的时间节点: 导航被确认后
- * ·传入: 函数
- * ·作用: 分析、更改页面标题、声明页面等辅助功能，这个钩子不接受next函数也不会改变导航本身
- * @to: 即将要进入的目标
- * @from: 当前导航正要离开的路由
- */
-// router.afterEach((to, from) => {
-//     const toDepth = to.path.split('/').length;
-//     const fromDepth = from.path.split('/').length;
-//     to.meta.transition = toDepth < fromDepth ? 'slide-right' : 'slide-left';
-// });
+router.beforeEach((to, from, next) => {
+    store.commit('loading_state');
+    console.log(store.state);
+    setTimeout(next, 2000);
+})
+
+let sleep = function(time) {
+    var timeOut = new Date().getTime() + parseInt(time, 10);
+    while(new Date().getTime() <= timeOut) {}
+};
+
+router.afterEach((to, from, next) => {
+    store.commit('loading_state');
+    console.log(store.state);
+});
 
 export default router;
