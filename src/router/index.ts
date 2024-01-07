@@ -40,20 +40,17 @@ const router = createRouter(
     }
 );
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((_to, _from, next) => {
     store.commit('loading_state');
     console.log(store.state);
-    setTimeout(next, 2000);
+    next();
 })
 
-let sleep = function(time) {
-    var timeOut = new Date().getTime() + parseInt(time, 10);
-    while(new Date().getTime() <= timeOut) {}
-};
-
-router.afterEach((to, from, next) => {
-    store.commit('loading_state');
-    console.log(store.state);
+router.afterEach((_to, _from, _next) => {
+    setTimeout(() => {
+        store.commit('loading_state');
+        console.log(store.state);
+    }, 1500);
 });
 
 export default router;

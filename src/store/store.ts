@@ -8,7 +8,7 @@ const store = createStore(
             }
         },
         mutations: {
-            loading_state(state) {
+            loading_state(state: { isLoading: boolean }) {
                 state.isLoading = !state.isLoading;
             }
         }
