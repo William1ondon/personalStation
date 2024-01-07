@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
 import { useRouter } from 'vue-router';
-import store from './store/index';
+import store from './store';
 
 const router = useRouter();
 
 function onClickBtn(btn_event: Event) {
+  console.log(store.state.mdState.isLoading);
+  
   const target = (btn_event.target as HTMLElement);
   switch (target.id) {
     case 'btn_w':
@@ -44,7 +46,7 @@ function onClickBtn(btn_event: Event) {
       <button id="btn_d" class="btn" @click="onClickBtn">DreamWall</button>
     </div>
 
-    <div class="loader" v-if="store.state.isLoading">
+    <div class="loader" v-if="store.state.mdState.isLoading">
       <div class="container">
         <div class="carousel">
           <div class="love"></div>

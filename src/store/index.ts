@@ -1,18 +1,10 @@
-import { createStore } from 'vuex';
+import Vuex from 'vuex';
+import ModuleState from './modules/state';
 
-const store = createStore(
-    {
-        state() {
-            return {
-                isLoading: false
-            }
-        },
-        mutations: {
-            loading_state(state: { isLoading: boolean }) {
-                state.isLoading = !state.isLoading;
-            }
-        }
+const store = new Vuex.Store({
+    modules: {
+        mdState: ModuleState
     }
-);
+});
 
 export default store;

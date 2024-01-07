@@ -3,7 +3,7 @@ import './style.css';
 import './my_animate.css';
 import App from './App.vue';
 import router from './router/index';
-import store from './store/index';
+import store from './store';
 import 'animate.css';
 
 // 滚动动画 AOS
