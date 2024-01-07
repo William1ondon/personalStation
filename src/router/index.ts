@@ -4,7 +4,7 @@ import WilliamPage from '../views/WilliamPage.vue';
 import JenniferPage from '../views/JenniferPage.vue';
 import DreamWall from '../views/DreamWall.vue';
 import PhotoWall from '../views/WilliamPage.vue';
-import store from '../store/store';
+import store from '../store/index';
 
 const router = createRouter(
     {

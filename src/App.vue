@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
 import { useRouter } from 'vue-router';
-import store from './store/store';
+import store from './store/index';
 
 const router = useRouter();
 
