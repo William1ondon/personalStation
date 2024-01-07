@@ -13,7 +13,8 @@
     "aos": "^2.3.4",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "vuex-module-decorators": "^2.0.0"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",

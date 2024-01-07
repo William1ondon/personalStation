@@ -41,14 +41,14 @@ const router = createRouter(
 );
 
 router.beforeEach((_to, _from, next) => {
-    store.commit('loading_state');
+    store.commit('switchLS');
     console.log(store.state);
     next();
 })
 
 router.afterEach((_to, _from, _next) => {
     setTimeout(() => {
-        store.commit('loading_state');
+        store.commit('switchLS');
         console.log(store.state);
     }, 1500);
 });
