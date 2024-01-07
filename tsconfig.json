@@ -21,7 +21,10 @@
     "noFallthroughCasesInSwitch": true,
 
     "experimentalDecorators": true, // 重要：启用装饰器支持
-    "emitDecoratorMetadata": true   // 重要：启用装饰器元数据支持
+    "emitDecoratorMetadata": true,   // 重要：启用装饰器元数据支持
+    "paths": {
+      "vuex": ["./node_modules/vuex/types"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
