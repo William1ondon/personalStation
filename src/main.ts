@@ -5,6 +5,7 @@ import App from './App.vue';
 import router from './router/index';
 import store from './store';
 import 'animate.css';
+import {getBuffer, list} from './oss';
 
 // 滚动动画 AOS
 import AOS from 'aos';
@@ -15,6 +16,9 @@ AOS.init({
     delay: 100,
     duration: 1000,
 });
+
+getBuffer();
+list();
 
 const app = createApp(App);
 app.use(router);
