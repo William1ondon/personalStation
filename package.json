@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ali-oss": "^6.19.0",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "vue": "^3.3.11",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
+    "@types/node": "^20.10.7",
     "@vitejs/plugin-vue": "^4.5.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",

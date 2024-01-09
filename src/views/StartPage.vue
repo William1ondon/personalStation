@@ -16,7 +16,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url("../assets/start_bg.jpg") no-repeat center center scroll;
+    background: url("https://test-william-web.oss-cn-guangzhou.aliyuncs.com/img/web_bg/start_bg.jpg") no-repeat center center scroll;
     background-size: cover;
 }
 </style>
