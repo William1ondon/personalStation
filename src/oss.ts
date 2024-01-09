@@ -27,6 +27,9 @@ export async function list() {
             "max-keys": 10,
             // 列举文件名中包含前缀foo/的文件。
             prefix: 'img/test/'
+        },
+        {
+            timeout: 5000 // 可选参数，设置请求超时时间
         }
     );
     console.log(result.objects[0].url);
