@@ -1,17 +1,65 @@
 <script setup>
+import CardA from '../components/CardA.vue'
+import { ref, onMounted } from 'vue';
+
+const videoEle = ref(null);
+
+onMounted(() => {
+    videoEle.value = document.querySelector('.video-background');
+});
+
+function videoControl(n){
+    switch (n) {
+        case 0:
+            videoEle.value.currentTime = 0;
+            videoEle.value.play();
+            break;
+
+        case 1:
+            videoEle.value.play();
+            break;
+
+        case 2:
+            videoEle.value.pause();
+            break;
+    
+        default:
+            break;
+    }
+}
 </script>
 
 <template>
-    <!-- <transition> -->
-        <div class="video-box">
-            <video class="video-background" preload="auto" loop playsinline autoplay
-                src="https://test-william-web.oss-cn-guangzhou.aliyuncs.com/videos/web_bg/start_bg.mp4" tabindex="-1"
-                muted="muted"></video>
+    <transition>
+        <div>
+            <!-- 这个bg图，是截下面视频的第一帧制成，为了避免视频加载前的一小段空白 -->
+            <div class="bg"></div>
+
+            <!-- 视频 -->
+            <div class="video-box">
+                <video class="video-background" preload="auto" loop playsinline autoplay
+                    src="../assets/start_video.mp4" tabindex="-1"></video>
+            </div>
+            <CardA @videoControl="(n) => {videoControl(n)}"/>
         </div>
-    <!-- </transition> -->
+    </transition>
 </template>
 
 <style scoped>
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: url("../assets/start_bg.jpg") no-repeat center center scroll;
+    background-size: cover;
+}
+
+/*
+    视频样式
+*/
 * {
     margin: 0;
     padding: 0;
