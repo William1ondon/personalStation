@@ -3,7 +3,7 @@ import StartPage from '../views/StartPage.vue';
 import WilliamPage from '../views/WilliamPage.vue';
 import JenniferPage from '../views/JenniferPage.vue';
 import DreamWall from '../views/DreamWall.vue';
-import PhotoWall from '../views/PhotoWall.vue';
+import PhotoWall from '../views/WilliamPage.vue';
 import store from '../store'
 
 const router = createRouter(

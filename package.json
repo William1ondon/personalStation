@@ -9,12 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@luxdamore/vue-css-doodle": "^1.0.1",
     "ali-oss": "^6.19.0",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
-    "css-doodle": "^0.38.3",
-    "dat.gui": "^0.7.9",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5",
     "vuex": "^4.0.2",
