@@ -1,21 +1,30 @@
 <script setup>
+import 'css-doodle';
 </script>
 
 <template>
-    <transition>
-        <div class="bg"></div>
-    </transition>
+    <Transition>
+        <div>
+            <css-doodle click-to-update>
+                @grid: 20 / 100vmax / #0a0c27;
+                @content: @unicode.r(0x2500, 0x257f);
+                color: hsla(@r360, 70%, 70%, @r.9);
+                font-size: 8vmin;
+                font-family: sans-serif;
+            </css-doodle>
+        </div>
+    </Transition>
 </template>
 
 <style scoped>
-.bg {
+css-doodle {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: url("https://test-william-web.oss-cn-guangzhou.aliyuncs.com/img/web_bg/william_bg.jpg") no-repeat center center scroll;
-    background-size: cover;
+}
+
+.test {
+    position: absolute;
+    color: #ffffff;
 }
 </style>

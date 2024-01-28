@@ -17,10 +17,14 @@ AOS.init({
     duration: 1000,
 });
 
-getBuffer();
-list();
+// getBuffer();
+// list();
 
 const app = createApp(App);
+app.config.compilerOptions.isCustomElement = ( tag ) => {
+    const arr = ['css-doodle'];
+    return arr.includes('css-doodle');
+};
 app.use(router);
 app.use(store);
 app.mount('#app');
